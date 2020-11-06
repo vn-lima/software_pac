@@ -3,19 +3,21 @@
 
 header{
     height: 60px;
-    background: #113f67;
+    background: #19d3da;
 }
 
 footer{
     position: fixed;;
     bottom:0;
     width:100%;
-    background-color: #113f67;
+    background: #343a40;
+    color: #ffffff;
 }
 
 nav{
     padding-top: 10px;
     text-align: center;
+    background-color: #19d3da;
 }
 
 .navegacao{
@@ -89,14 +91,3 @@ nav{
     font-family: 'Open Sans', sans-serif;
 
 }
-.fundo
-{
-    background-color: white;
-}
-
-.inputs
-{
-    border-radius: 10px;
-    width: 30%;
-}
-

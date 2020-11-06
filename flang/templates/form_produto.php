@@ -1,5 +1,5 @@
 <div>
-    <form action="">
+    <form action="produto.php">
         <div>
             <div>
                 <label for="nome">Nome: </label>

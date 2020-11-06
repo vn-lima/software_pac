@@ -1,7 +1,7 @@
-<body class = "fundo">   
-    <div class = "container">
-        <h3 class = title-Cadastro>
-        Cadastre-se e conheça nossos produtos!
+<body class="fundo">
+    <div class="container">
+        <h3 class=title-Cadastro>
+            Cadastre-se e conheça nossos produtos!
         </h3>
 
         <br>
@@ -48,11 +48,11 @@
             </div>
         </form>
         <br>
-    </div> 
+    </div>
 </body>
 <script>
-    $(document).ready(function(){
-        $('#cpf').mask('000.000.000-00');
-        $('#telefone').mask('(00) 00000-0000');
-    });
+$(document).ready(function() {
+    $('#cpf').mask('000.000.000-00');
+    $('#telefone').mask('(00) 00000-0000');
+});
 </script>
