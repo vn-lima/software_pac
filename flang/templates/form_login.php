@@ -2,17 +2,17 @@
     <div class="tituloCadastro">Realizar login </div>
     <div class="row-md-6">
         <div class="col">
-            <form>
+            <form id="form_login" method="post" action="security/login/valida_login.php">
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
                         <label for="usuario">Usuário</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" name="usuario" id="usuario" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-3 mb-3">
                         <label for="senha">Senha</label>
-                        <input type="password" class="form-control" required>
+                        <input type="password" class="form-control" name="senha" id="senha" required>
                     </div>
                 </div>
                 <div class="form-row center">

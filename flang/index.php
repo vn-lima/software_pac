@@ -32,6 +32,18 @@
             </nav>
         </header>
         <div>
+            <?php if(isset($_GET['msg'])&&$_GET['msg']!=""): ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-<?= $_GET['status']; ?> alert-dismissible fade show" role="alert">
+                            <?php echo $_GET['msg']; ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
             <?php
             if (isset($_GET['folder']) && isset($_GET['file'])) {
                 if (@!include $_GET['folder'] . $_GET['file']) {
