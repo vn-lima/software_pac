@@ -33,4 +33,3 @@ include "../database/connection.php";
     }
     echo "<script>location.href='../../index.php?folder=templates/&file=form_login.php&msg=$msg&status=$status';</script>";
 ?>
->>>>>>> Stashed changes

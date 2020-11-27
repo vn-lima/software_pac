@@ -83,6 +83,4 @@ if (isset($_SESSION["id"])) {
             <div>© Direitos autorais 2020</div>
         </footer>
     </body>
-
->>>>>>> Stashed changes
 </html>

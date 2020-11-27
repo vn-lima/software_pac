@@ -117,4 +117,4 @@ if (isset($_GET['upd'])) {
         window.location.href = "templates/delete_user.php";
     }
 </script>
->>>>>>> Stashed changes
+
