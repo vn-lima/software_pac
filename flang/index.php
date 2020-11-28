@@ -1,6 +1,32 @@
+<?php
+session_start();
+
+include "security/database/connection.php";
+
+// Verifica se o usuario esta logado
+if (isset($_SESSION["id"])) {
+    $logado = 1;
+    $id = $_SESSION["id"];
+    //Verifica se existe adm com este usuario
+    $sql_sel_adm = "SELECT * FROM usuarios WHERE id = $id AND adm = 1";
+    $instrucao = $db_connection->prepare($sql_sel_adm);
+    $instrucao->execute();
+    $adms = $instrucao->fetchAll(PDO::FETCH_ASSOC);
+    $conta_adm = $instrucao->rowCount();
+    // Verifica se o usuario é adm
+    if ($conta_adm != 0) {
+        $adm = 1;
+    }else{
+        $adm = 0;
+    }
+}else{
+    $logado = 0;
+    $adm = 0;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt_BR" dir="ltr">
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +44,35 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navegacao">
+            <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.php?">Home</a>
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="navbar-brand" href="index.php?folder=templates/&file=form_login.php">login</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="navbar-brand" href="index.php?folder=templates/&file=form_usuario.php">Crie sua
-                            conta</a>
-                    </li>
+                    <?php if($adm == 1): ?>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="index.php?folder=templates/&file=form_produto.php">Cadastrar Produtos</a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if($logado == 1): ?>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="index.php?folder=templates/&file=perfil.php">Perfil</a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if($logado == 1): ?>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="security/login/logout.php">Sair</a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if($logado == 0): ?>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="index.php?folder=templates/&file=form_usuario.php">Crie sua conta</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="index.php?folder=templates/&file=form_login.php">Entrar</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </header>
@@ -58,5 +103,4 @@
             <div>© Direitos autorais 2020</div>
         </footer>
     </body>
-
 </html>
