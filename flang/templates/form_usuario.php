@@ -55,8 +55,8 @@
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3 ">
-                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                        <button type="reset" class="btn btn-link btn-lg">Limpar</button>
+                        <button type="submit" data-cy=submit class="btn btn-primary btn-lg">Enviar</button>
+                        <button type="reset" data-cy=reset class="btn btn-link btn-lg">Limpar</button>
                     </div>
                 </div>
             </form>

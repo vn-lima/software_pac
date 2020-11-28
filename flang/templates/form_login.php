@@ -17,8 +17,8 @@
                 </div>
                 <div class="form-row center">
                     <div class="col-md-6 mb-3 ">
-                        <button type="submit" class="btn btn-primary btn-md">Entrar</button>
-                        <button type="reset" class="btn btn-link btn-md">Esqueci minha senha</button>
+                        <button type="submit" data-cy=submit class="btn btn-primary btn-md">Entrar</button>
+                        <button type="reset" data-cy=reset class="btn btn-link btn-md">Esqueci minha senha</button>
                     </div>
                 </div>
             </form>
