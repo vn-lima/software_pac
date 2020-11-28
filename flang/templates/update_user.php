@@ -13,31 +13,31 @@ $estado      = $_POST['estado'];
 $cep         = $_POST['cep'];
 $id          = $_POST['id'];
 
-if (!isset($usuario)) {
+if (!isset($usuario) || $usuario == "") {
     $msg = "O Usuário não foi preenchido";
     $status = "danger";
-}elseif (!isset($senha)) {
+}elseif (!isset($senha) || $senha == "") {
     $msg = "O Usuário não foi preenchido";
     $status = "danger";
-}elseif (!isset($email)) {
+}elseif (!isset($email) || $email == "") {
     $msg = "O Email não foi preenchido";
     $status = "danger";
-}elseif (!isset($endereco)) {
+}elseif (!isset($endereco) || $endereco == "") {
     $msg = "O Endereco não foi preenchido";
     $status = "danger";
-}elseif (!isset($telefone)) {
+}elseif (!isset($telefone) || $telefone == "") {
     $msg = "O Telefone não foi preenchido";
     $status = "danger";
-}elseif (!isset($nome)) {
+}elseif (!isset($nome) || $nome == "") {
     $msg = "O Nome não foi preenchido";
     $status = "danger";
-}elseif (!isset($complemento)) {
+}elseif (!isset($complemento) || $complemento == "") {
     $msg = "O Complemento não foi preenchido";
     $status = "danger";
-}elseif (!isset($estado)) {
+}elseif (!isset($estado) || $estado == "") {
     $msg = "O Estado não foi preenchido";
     $status = "danger";
-}elseif (!isset($cep)) {
+}elseif (!isset($cep) || $cep == "") {
     $msg = "O CEP não foi preenchido";
     $status = "danger";
 }else{
