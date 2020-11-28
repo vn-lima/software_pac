@@ -35,7 +35,7 @@ if (isset($_SESSION["id"])) {
                 <ul class="navbar-nav mr-auto">
                     <?php if($logado == 1): ?>
                         <li class="nav-item active">
-                            <a class="navbar-brand" href="index.php?folder=templates/&file=perfil.php">Perfil</a>
+                            <a class="navbar-brand" id="perfilTeste" href="index.php?folder=templates/&file=perfil.php">Perfil</a>
                         </li>
                     <?php endif; ?>
 
