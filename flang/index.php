@@ -16,21 +16,13 @@ if (isset($_SESSION["id"])) {
     // Verifica se o usuario é adm
     if ($conta_adm != 0) {
         $adm = 1;
-    }else{lima
+    }else{
         $adm = 0;
     }
 }else{
     $logado = 0;
     $adm = 0;
 }
-?>
-
-if (isset($_SESSION["id"])) {
-    $logado = 1;
-}else{
-    $logado = 0;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +47,6 @@ if (isset($_SESSION["id"])) {
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.php?">Home</a>
                 <ul class="navbar-nav mr-auto">
-                  
                     <?php if($adm == 1): ?>
                         <li class="nav-item active">
                             <a class="navbar-brand" href="index.php?folder=templates/&file=form_produto.php">Cadastrar Produtos</a>
@@ -64,12 +55,7 @@ if (isset($_SESSION["id"])) {
 
                     <?php if($logado == 1): ?>
                         <li class="nav-item active">
-                            <a class="navbar-brand" href="index.php?folder=templates/&file=perfil.php">Perfil</a>
-
-                    <?php if($logado == 1): ?>
-                        <li class="nav-item active">
                             <a class="navbar-brand" id="perfilTeste" href="index.php?folder=templates/&file=perfil.php">Perfil</a>
-
                         </li>
                     <?php endif; ?>
 
