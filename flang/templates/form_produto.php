@@ -7,7 +7,7 @@
                 <label for="valor">Valor: </label>
                 <input type="text" class="form-control" name="valor" id="valor" required>
             </div>
-            <div class="col-md-6 mb-3">
+            <div>
                 <label for="tipo">Tipo: </label>
                 <select class="form-control" name="tipo" id="tipo" required>
                     <option value="">Escolha...</option>
@@ -27,11 +27,12 @@
                     <option value="14">Ferramentas e Construção</option>
                     <option value="15">Outros</option>
                 </select>
+
                 <label for="telefone">Telefone: </label>
                 <input type="text" class="form-control" name="telefone" id="telefone">
             </div>
             <div class="col-md-4 mb-3">
-                <input class="btn btn-primary btn-lg" type="submit">
+                <input class="form-control" type="submit">
             </div>
         </div>
     </form>
