@@ -75,14 +75,12 @@ if (isset($_GET['upd'])) {
 
         <?php if (isset($_GET['upd'])) : ?>
                 <input type="submit" class="btn btn-success" value="Concluir">
-                <input type="submit" class="btn btn-success" id="testeConcluir" value="Concluir">
                 <a href="index.php?folder=templates/&file=perfil.php" class="btn btn-primary">Voltar</a>
         </form>
     <?php endif; ?>
 
     <?php if (!isset($_GET['upd'])) : ?>
             <a href="index.php?folder=templates/&file=perfil.php&upd=1"><button class="btn btn-primary">Alterar Dados</button></a>
-            <a href="index.php?folder=templates/&file=perfil.php&upd=1"><button class="btn btn-primary" id="testeAlteracao">Alterar Dados</button></a>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Excluir Conta</button>
         <?php endif; ?>
 </div>
