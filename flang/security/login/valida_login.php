@@ -13,10 +13,12 @@ include "../database/connection.php";
         $sql_sel = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
         $instrucao = $db_connection->prepare($sql_sel);
         $instrucao->execute();
+        $conta = $instrucao->fetchAll(PDO::FETCH_ASSOC);
         $count = $instrucao->rowCount();
-
+        
         if($count > 0){
             session_start();
+            $_SESSION['id'] = $conta[0]["id"];
             $_SESSION['usuario'] = $usuario;
             $_SESSION['idsessao'] = session_id();
 

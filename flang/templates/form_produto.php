@@ -1,32 +1,37 @@
-<div>
-    <form action="produto.php">
-        <div>
-            <div>
+<div class="container">
+    <form action="templates/produto.php">
+        <div class="form-row formProdutos">
+            <div class="col-md-6 mb-3">
                 <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" required>
+                <input type="text" class="form-control" name="nome" id="nome" required>
                 <label for="valor">Valor: </label>
-                <input type="text" name="valor" id="valor" required>
+                <input type="text" class="form-control" name="valor" id="valor" required>
             </div>
-            <div>
+            <div class="col-md-6 mb-3">
                 <label for="tipo">Tipo: </label>
-                <select name="tipo" id="tipo" required>
+                <select class="form-control" name="tipo" id="tipo" required>
                     <option value="">Escolha...</option>
                     <option value="1">Eletrodomésticos</option>
-                    <option value="2">Games</option>
-                    <option value="3">Informática</option>
-                    <option value="4">Moda</option>
-                    <option value="5">Esporte</option>
-                    <option value="6">Móveis e Decoração</option>
-                    <option value="7">Beleza</option>
-                    <option value="8">Livros</option>
-                    <option value="9">Outros</option>
+                    <option value="2">Esportes</option>
+                    <option value="3">Móveis</option>
+                    <option value="4">Produtos de limpeza</option>
+                    <option value="5">Brinquedos</option>
+                    <option value="6">Roupas/Acessórios</option>
+                    <option value="7">informática</option>
+                    <option value="8">PetShop</option>
+                    <option value="9">Livros</option>
+                    <option value="10">Beleza</option>
+                    <option value="11">Jogos</option>
+                    <option value="12">Perfumes</option>
+                    <option value="13">Antiguidades/Coleções</option>
+                    <option value="14">Ferramentas e Construção</option>
+                    <option value="15">Outros</option>
                 </select>
-
                 <label for="telefone">Telefone: </label>
-                <input type="text" name="telefone" id="telefone">
+                <input type="text" class="form-control" name="telefone" id="telefone">
             </div>
-            <div>
-                <input type="submit">
+            <div class="col-md-4 mb-3">
+                <input class="btn btn-primary btn-lg" type="submit">
             </div>
         </div>
     </form>
