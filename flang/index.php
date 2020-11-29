@@ -51,6 +51,9 @@ if (isset($_SESSION["id"])) {
                         <li class="nav-item active">
                             <a class="navbar-brand" href="index.php?folder=templates/&file=form_produto.php">Cadastrar Produtos</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="index.php?folder=templates/&file=lista_produtos.php">Listar Produtos</a>
+                        </li>
                     <?php endif; ?>
 
                     <?php if($logado == 1): ?>

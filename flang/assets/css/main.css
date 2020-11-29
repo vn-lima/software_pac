@@ -6,7 +6,6 @@ header {
 
 footer {
     position: fixed;
-    ;
     bottom: 0;
     width: 100%;
     background: #343a40;
@@ -47,6 +46,10 @@ a:hover {
     text-align: center;
     color: #373a40;
     font-size: xx-large;
+}
+
+.centro{
+    text-align: center;
 }
 =======
 header {

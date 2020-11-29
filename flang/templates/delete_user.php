@@ -4,8 +4,8 @@ include "../security/database/connection.php";
 
 if (isset($_SESSION["id"])) {
     $id = $_SESSION["id"];
-    $sql_sel_user = "DELETE FROM usuarios WHERE id = $id";
-    $instrucao = $db_connection->prepare($sql_sel_user);
+    $sql_del_user = "DELETE FROM usuarios WHERE id = $id";
+    $instrucao = $db_connection->prepare($sql_del_user);
     $instrucao->execute();
     if ($instrucao == true) {
         $msg= "Usuário deletado com sucesso";
