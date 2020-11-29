@@ -9,9 +9,6 @@ $quantidade = $_POST['quantidade'];
 $descricao  = $_POST['descricao'];
 $url_img    = $_POST['url_img'];
 
-// Tiramos a formatação desses campos
-$valor = preg_replace( '/[^0-9]/is', '', $valor );
-
 //Verifica se existe produto com o mesmo nome 
 $sql_sel_prod = "SELECT * FROM produtos WHERE nome = '$nome'";
 $instrucao = $db_connection->prepare($sql_sel_prod);
