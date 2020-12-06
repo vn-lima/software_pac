@@ -8,7 +8,10 @@ $valor       = $_POST['valor'];
 $tipo        = $_POST['tipo'];
 $quantidade  = $_POST['quantidade'];
 $descricao   = $_POST['descricao'];
-$img         = $_POST['url_img'];
+
+// Retiramos a formatação de moeda do valor
+$valor = preg_replace('/[^0-9]/', '', $valor);
+$valor = substr($valor, 0, -2);
 
 if (!isset($nome) || $nome == "") {
     $msg = "O Nome não foi preenchido";
@@ -25,9 +28,6 @@ if (!isset($nome) || $nome == "") {
 }elseif (!isset($descricao) || $descricao == "") {
     $msg = "A Descrição não foi preenchida";
     $status = "danger";
-}elseif (!isset($img) || $img == "") {
-    $msg = "A URL da Imagem não foi preenchida";
-    $status = "danger";
 }else{
     //Verifica se existe produto com o mesmo nome
     $sql_sel_prod = "SELECT * FROM produtos WHERE nome = '$nome' AND id <> $id";
@@ -42,8 +42,7 @@ if (!isset($nome) || $nome == "") {
                 valor = '$valor',
                 tipo = '$tipo',
                 quantidade = '$quantidade',
-                descricao = '$descricao',
-                img = '$img'
+                descricao = '$descricao'
             WHERE id = $id";
         $instrucao = $db_connection->prepare($sql_upd_prod);
         $instrucao->execute();

@@ -1,7 +1,8 @@
 <div class="container">
-    <div class="tituloCadastro">Cadastro de cliente</div>
     <div class="row">
-        <div class="col">
+        <div class="col fundoForm">
+            <div class="tituloCadastro">Cadastro de cliente</div>
+            <hr>
             <form id="FormularioCadastro" method="post" action="templates/usuario.php">
                 <div class="form-row">
                     <div class="col-md-6 mb-3">

@@ -45,7 +45,7 @@ if (isset($_SESSION["id"])) {
     <body>
         <header>
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.php?">Home</a>
+                <a class="navbar-brand" href="index.php?folder=templates/&file=principal.php">Home</a>
                 <ul class="navbar-nav mr-auto">
                     <?php if($adm == 1): ?>
                         <li class="nav-item active">
@@ -67,7 +67,10 @@ if (isset($_SESSION["id"])) {
 
                     <?php if($logado == 1): ?>
                         <li class="nav-item active">
-                            <a class="navbar-brand" href="security/login/logout.php">Sair</a>
+                            <a class="navbar-brand right" href="index.php?folder=templates/&file=carrinho.php">Carrinho</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="navbar-brand right" href="security/login/logout.php">Sair</a>
                         </li>
                     <?php endif; ?>
 
@@ -76,7 +79,7 @@ if (isset($_SESSION["id"])) {
                             <a class="navbar-brand" href="index.php?folder=templates/&file=form_usuario.php">Crie sua conta</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="navbar-brand" href="index.php?folder=templates/&file=form_login.php">Entrar</a>
+                            <a class="navbar-brand right-block" href="index.php?folder=templates/&file=form_login.php">Entrar</a>
                         </li>
                     <?php endif; ?>
                 </ul>

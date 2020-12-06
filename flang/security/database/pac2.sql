@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Nov-2020 às 00:00
+-- Generation Time: 03-Dez-2020 às 02:10
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -29,10 +29,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `produtos` (
   `id` int(11) UNSIGNED NOT NULL,
   `nome` varchar(80) NOT NULL,
-  `valor` decimal(5,2) UNSIGNED NOT NULL,
+  `valor` decimal(8,2) UNSIGNED NOT NULL,
   `tipo` int(2) NOT NULL,
   `quantidade` int(3) NOT NULL,
-  `descricao` varchar(200) NOT NULL
+  `descricao` varchar(200) NOT NULL,
+  `img` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -55,6 +56,14 @@ CREATE TABLE `usuarios` (
   `cep` varchar(8) NOT NULL,
   `adm` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `cpf`, `usuario`, `senha`, `email`, `endereco`, `telefone`, `nome`, `complemento`, `estado`, `cep`, `adm`) VALUES
+(8, '12345678910', 'adm', 'adm', 'vini.n.lima@gmail.com', 'Rua Souza Marinho, 76', '(47) 99990-899', 'Vinicius Nogueira de Lima', 'Primeira lateral da Rua José da Silva', 'SC', '95218332', 1),
+(9, '10987654321', 'teste', 'senha', '123@123', 'teste', '(47) 11111-111', 'teste', 'teste', 'sc', '11111111', 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +111,20 @@ ALTER TABLE `vendas`
 --
 
 --
+-- AUTO_INCREMENT for table `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `vendas`
+--
+ALTER TABLE `vendas`
+  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -17,7 +17,8 @@ if (isset($_GET['id'])) {
     $url_img    = $produtos[0]['img'];
     //Variavel de verificação de update
     $upd = "templates/update_produto.php";
-}else{
+    $disabled_img = "disabled";
+} else {
     //Variaveis dos inputs
     $nome = "";
     $valor = "";
@@ -30,68 +31,74 @@ if (isset($_GET['id'])) {
 }
 ?>
 <div class="container">
-    <h3>Cadastro de Produtos</h3>
-    <form action="<?=$upd?>" method="post">
-        <input type="hidden" name="id" id="id" value="<?=$id?>">
-        <div class="form-row formProdutos">
-            <div class="col-md-4 mb-3">
-                <label for="nome">Nome: </label>
-                <input type="text" class="form-control" name="nome" id="nome" value="<?=$nome?>" required>
-
-                <label for="valor">Valor: </label>
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">R$</span>
-                    <input type="text" class="form-control" name="valor" id="valor" value="<?=$valor?>" required>
+    <div class="row">
+        <div class="col fundoForm">
+            <div class="tituloCadastro">Cadastro de produto</div>
+            <hr>
+            <form action="<?= $upd ?>" method="post">
+                <input type="hidden" name="id" id="id" value="<?= $id ?>">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" value="<?= $nome ?>" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="tipo">Tipo: </label>
+                        <input type="hidden" name="tipo_2" id="tipo_2" value="<?= $tipo ?>">
+                        <select class="form-control" name="tipo" id="tipo" required>
+                            <option value="">Escolha...</option>
+                            <option value="1">Eletrodomésticos</option>
+                            <option value="2">Esportes</option>
+                            <option value="3">Móveis</option>
+                            <option value="4">Brinquedos</option>
+                            <option value="5">Roupas/Acessórios</option>
+                            <option value="6">informática</option>
+                            <option value="7">PetShop</option>
+                            <option value="8">Livros</option>
+                            <option value="9">Beleza</option>
+                            <option value="10">Jogos</option>
+                            <option value="11">Antiguidades/Coleções</option>
+                            <option value="12">Ferramentas e Construção</option>
+                            <option value="13">Outros</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <label for="tipo">Tipo: </label>
-                <input type="hidden" name="tipo_2" id="tipo_2" value="<?=$tipo?>">
-                <select class="form-control" name="tipo" id="tipo" required>
-                    <option value="">Escolha...</option>
-                    <option value="1">Eletrodomésticos</option>
-                    <option value="2">Esportes</option>
-                    <option value="3">Móveis</option>
-                    <option value="4">Produtos de limpeza</option>
-                    <option value="5">Brinquedos</option>
-                    <option value="6">Roupas/Acessórios</option>
-                    <option value="7">informática</option>
-                    <option value="8">PetShop</option>
-                    <option value="9">Livros</option>
-                    <option value="10">Beleza</option>
-                    <option value="11">Jogos</option>
-                    <option value="12">Perfumes</option>
-                    <option value="13">Antiguidades/Coleções</option>
-                    <option value="14">Ferramentas e Construção</option>
-                    <option value="15">Outros</option>
-                </select>
-
-                <label for="quantidade">Quantidade: </label>
-                <input type="number" class="form-control" name="quantidade" id="quantidade" value="<?=$quantidade?>" required>
-            </div>
-            <div class="col-md-5 mb-3">
-                <label for="descricao">Descrição: </label>
-                <textarea type="text" class="form-control" name="descricao" id="descricao" rows="4" required><?=$descricao?></textarea>
-            </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                    <label for="valor">Valor</label>
+                        <input type="text" class="form-control" name="valor" id="valor" value="<?= $valor ?>" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" class="form-control" name="quantidade" id="quantidade" value="<?= $quantidade ?>" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="senha">Descrição</label>
+                        <textarea type="text" class="form-control" name="descricao" id="descricao" rows="4" required><?= $descricao ?></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="url_img">URL da Imagem: </label>
+                        <input type="text" class="form-control" name="url_img" id="url_img" value="<?= $url_img ?>" <?=$disabled_img?> required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3 ">
+                        <button type="submit" data-cy=submit class="btn btn-primary btn-lg">Enviar</button>
+                        <button type="reset" data-cy=reset class="btn btn-link btn-lg">Limpar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-md mb-3">
-                <label for="url_img">URL da Imagem: </label>
-                <input type="text" class="form-control" name="url_img" id="url_img" value="<?=$url_img?>" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <input class="btn btn-primary btn-lg" type="submit">
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
-
 <script>
     var tipo = $('#tipo_2').val();
-    $(document).ready(function(){
-        $('#valor').mask('#.##0,00', {reverse: true});
+    $(document).ready(function() {
+        $('#valor').mask('#.##0,00', {
+            reverse: true
+        });
         document.getElementById('tipo').value = tipo;
     });
 </script>

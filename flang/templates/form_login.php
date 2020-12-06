@@ -1,30 +1,9 @@
-<div class="container ">
-    <div class="tituloCadastro">Realizar login </div>
-    <div class="row-md-6">
-        <div class="col">
-            <form id="form_login" method="post" action="security/login/valida_login.php">
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" class="form-control" name="usuario" id="usuario" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-3 mb-3">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" name="senha" id="senha" required>
-                    </div>
-                </div>
-                <div class="form-row center">
-                    <div class="col-md-6 mb-3 ">
-                        <button type="submit" data-cy=submit class="btn btn-primary btn-md">Entrar</button>
-                        <button type="reset" data-cy=reset class="btn btn-link btn-md">Esqueci minha senha</button>
-                    </div>
-                </div>
-            </form>
-            <div class="float-right">
-                <img src="./assets/img/img_login.jpg" class="img-thumbnail">
-            </div>
-        </div>
-    </div>
-</div>
+<form id="form_login" method="post" action="security/login/valida_login.php" class="form-signin fundoLogin">
+    <div class="mb-3 tituloCadastro">Realizar login</div>
+    <label for="usuario" class="sr-only">Usuário</label>
+    <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuário" required autofocus>
+    <label for="senha" class="sr-only">Senha</label>
+    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    <button class="btn btn-lg btn-link btn-block" type="rest">Limpar</button>
+</form>

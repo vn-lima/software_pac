@@ -36,39 +36,33 @@
                                 $tipo = "Móveis";
                                 break;
                             case 4:
-                                $tipo = "Produtos de limpeza";
-                                break;
-                            case 5:
                                 $tipo = "Brinquedos";
                                 break;
-                            case 6:
+                            case 5:
                                 $tipo = "Roupas/Acessórios";
                                 break;
-                            case 7:
+                            case 6:
                                 $tipo = "informática";
                                 break;
-                            case 8:
+                            case 7:
                                 $tipo = "PetShop";
                                 break;
-                            case 9:
+                            case 8:
                                 $tipo = "Livros";
                                 break;
-                            case 10:
+                            case 9:
                                 $tipo = "Beleza";
                                 break;
-                            case 11:
+                            case 10:
                                 $tipo = "Jogos";
                                 break;
-                            case 12:
-                                $tipo = "Perfumes";
-                                break;
-                            case 13:
+                            case 11:
                                 $tipo = "Antiguidades/Coleções";
                                 break;
-                            case 14:
+                            case 12:
                                 $tipo = "Ferramentas e Construção";
                                 break;
-                            case 15:
+                            case 13:
                                 $tipo = "Outros";
                                 break;
                             default:
@@ -77,9 +71,9 @@
                         }
                         ?>
                         <tr>
-                            <td><?=$value['id']?></td>
+                            <td class="id"><?=$value['id']?></td>
                             <td><?=$value['nome']?></td>
-                            <td><?=$value['valor']?></td>
+                            <td id="valor"><?=$value['valor']?></td>
                             <td><?=$tipo?></td>
                             <td><?=$value['quantidade']?></td>
                             <td><?=$value['descricao']?></td>
@@ -115,7 +109,7 @@
                 Deseja realmente excluir este produto?
             </div>
             <div class="modal-footer">
-                <button type="button" onclick="deletar()" class="btn btn-danger">Excluir</button>
+                <button type="button" onclick="deletar(e)" class="btn btn-danger">Excluir</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Voltar</button>
             </div>
         </div>
@@ -123,7 +117,17 @@
 </div>
 
 <script>
-    function deletar() {
-        window.location.href = "index.php?folder=templates/&file=delete_produto.php&id=<?=$value['id']?>";
+    $(document).ready(function() {
+        $('#valor').mask('#.##0,00', {
+            reverse: true
+        });
+    });
+
+    function deletar(e) {
+        e.preventDefault;
+        var nome = $(this).closest('tr').find('td[data-nome]').data('nome');
+        alert(nome);
+
+        //window.location.href = "index.php?folder=templates/&file=delete_produto.php&id=<?=$value['id']?>";
     }
 </script>
