@@ -15,7 +15,7 @@ $estado      = $_POST['estado'];
 $cep         = $_POST['cep'];
 $adm         = 0;
 
-// Pegamos apenas os numeros do cpf
+// Tiramos a formatação desses campos
 $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
 $telefone = preg_replace( '/[^0-9]/is', '', $telefone );
 
