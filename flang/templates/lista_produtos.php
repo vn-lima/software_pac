@@ -109,7 +109,7 @@
                 Deseja realmente excluir este produto?
             </div>
             <div class="modal-footer">
-                <button type="button" onclick="deletar(e)" class="btn btn-danger">Excluir</button>
+                <button type="button" onclick="deletar()" class="btn btn-danger">Excluir</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Voltar</button>
             </div>
         </div>
@@ -123,11 +123,7 @@
         });
     });
 
-    function deletar(e) {
-        e.preventDefault;
-        var nome = $(this).closest('tr').find('td[data-nome]').data('nome');
-        alert(nome);
-
-        //window.location.href = "index.php?folder=templates/&file=delete_produto.php&id=<?=$value['id']?>";
+    function deletar() {
+        window.location.href = "index.php?folder=templates/&file=delete_produto.php&id=<?=$value['id']?>";
     }
 </script>

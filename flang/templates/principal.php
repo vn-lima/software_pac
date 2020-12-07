@@ -8,47 +8,50 @@ $conta_prods = $instrucao->rowCount();
 
 ?>
 <main role="main">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <?php
-                $cont = 0;
-                foreach ($prods as $key => $value) {
-                    if ($cont == 0) {
-                        $classe = "carousel-item active";
-                    }else{
-                        $classe = "carousel-item";
-                    }
-                    ?>
-                    <div class="<?=$classe?>">
-                        <img class="bd-placeholder-img" width="100%" height="100%" src="./assets/img/<?=$prods[$cont]["img"]?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-                        <rect width="100%" height="100%" fill="#777" /></svg>
-                        <div class="container">
-                            <div class="carousel-caption text-left">
-                                <h1><?=$prods[$cont]["nome"]?></h1>
-                                <p><?=$prods[$cont]["descricao"]?></p>
-                                <p><a class="btn btn-lg btn-primary" href="index.php?folder=templates/&file=info_produto.php&id=<?=$prods[$cont]['id']?>" role="button">Visualizar</a></p>
+    <?php if($conta_prods > 0): ?>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <?php
+                    $cont = 0;
+                    foreach ($prods as $key => $value) {
+                        if ($cont == 0) {
+                            $classe = "carousel-item active";
+                        }else{
+                            $classe = "carousel-item";
+                        }
+                        ?>
+                        <div class="<?=$classe?>">
+                            <img class="bd-placeholder-img" width="100%" height="100%" src="./assets/img/<?=$prods[$cont]["img"]?>" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                            <rect width="100%" height="100%" fill="#777" /></svg>
+                            <div class="container">
+                                <div class="carousel-caption text-left">
+                                    <h1><?=$prods[$cont]["nome"]?></h1>
+                                    <p><?=$prods[$cont]["descricao"]?></p>
+                                    <p><a class="btn btn-lg btn-primary" href="index.php?folder=templates/&file=info_produto.php&id=<?=$prods[$cont]['id']?>" role="button">Visualizar</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                    $cont++;
-                }
-            ?>
+                        <?php
+                        $cont++;
+                    }
+                ?>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+    <?php endif; ?>
+    <br>
     <!-- TIPOS DE PRODUTOS -->
     <div class="container marketing">
         <?php
